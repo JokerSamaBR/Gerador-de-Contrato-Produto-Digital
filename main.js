@@ -35,7 +35,7 @@ function buildContractHtml() {
     <div class="pdf-title">CONTRATO DE COMPRA E VENDA DE PRODUTO DIGITAL</div>
     <div style="text-align:center; margin-bottom:10px">${emissao_local}, ${getDataExtenso()} (emissão do contrato)</div>
     <p><strong>Vendedor:</strong> ${vendedor_nome}, inscrito sob o CNPJ/CPF nº ${vendedor_cnpj}, com endereço em ${vendedor_endereco}, e-mail ${vendedor_email}.</p>
-    <p><strong>Comprador:</strong> ${comprador_nome}, CPF nº ${comprador_cpf}, residente em ${comprador_endereco}, e-mail ${comprador_email}.</p>
+    <p><strong>Comprador:</strong> ${comprador_nome}, CNPJ/CPF nº ${comprador_cpf}, residente em ${comprador_endereco}, e-mail ${comprador_email}.</p>
 
     <div class="clause-title">1. DO OBJETO</div>
     <p>O presente contrato tem por objeto a compra e venda do produto digital denominado <strong>${produto_nome}</strong>, descrito como: ${produto_desc}, no valor de R$ ${produto_valor}.</p>
