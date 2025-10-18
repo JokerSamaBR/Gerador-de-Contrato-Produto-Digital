@@ -27,8 +27,8 @@ function buildContractHtml() {
   const produto_valor = document.getElementById('produto_valor').value || '0,00';
   const produto_prazo = document.getElementById('produto_prazo').value || '_________________________';
   const produto_entrega = document.getElementById('produto_entrega').value || '_________________________';
-  const foro_local = document.getElementById('foro_local').value || 'Natal/RN';
-  const emissao_local = document.getElementById('emissao_local')?.value || 'Natal/RN';
+  const foro_local = document.getElementById('foro_local').value || 'Cidade/ES';
+  const emissao_local = document.getElementById('emissao_local')?.value || 'Cidade/ES';
 
   return `
   <div class="pdf-page">
