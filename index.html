@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gerador de Contrato de Compra e Venda - Produto Digital</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="styles.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+  <script type="importmap">
+  {
+    "imports": {
+      "app": "./main.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div class="container py-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3>Gerador de Contrato — Produto Digital</h3>
+      <div>
+        <button id="btnPreview" class="btn btn-outline-secondary no-print">Atualizar pré-visualização</button>
+        <button id="btnPdf" class="btn btn-primary no-print">Gerar PDF (A4)</button>
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <div class="col-lg-4">
+        <!-- Formulário -->
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Dados do Vendedor</h5>
+            <label class="form-label">Nome / Razão Social</label>
+            <input id="vendedor_nome" class="form-control mb-2" value="IgnitionServices">
+            <label class="form-label">CNPJ / CPF</label>
+            <input id="vendedor_cnpj" class="form-control mb-2" value="00.000.000/0000-00">
+            <label class="form-label">Endereço</label>
+            <input id="vendedor_endereco" class="form-control mb-2" value="Cidade - Estado">
+            <label class="form-label">E-mail</label>
+            <input id="vendedor_email" class="form-control mb-2" value="contato@ignitionservices.example">
+
+            <h5 class="card-title mt-3">Dados do Comprador</h5>
+            <label class="form-label">Nome Completo</label>
+            <input id="comprador_nome" class="form-control mb-2" value="Comprador">
+            <label class="form-label">CNPJ / CPF</label>
+            <input id="comprador_cpf" class="form-control mb-2" value="00.000.000/0000-00">
+            <label class="form-label">Endereço</label>
+            <input id="comprador_endereco" class="form-control mb-2" value="Cidade - Estado">
+            <label class="form-label">E-mail</label>
+            <input id="comprador_email" class="form-control mb-2" value="contato@comprador.example">
+          </div>
+        </div>
+
+        <div class="card shadow-sm mt-3">
+          <div class="card-body">
+            <h5 class="card-title">Dados do Produto</h5>
+            <label class="form-label">Nome do Produto</label>
+            <input id="produto_nome" class="form-control mb-2" value="Produto Digital Exemplo">
+            <label class="form-label">Descrição curta</label>
+            <textarea id="produto_desc" class="form-control mb-2" rows="3">Descrição do produto digital.</textarea>
+            <label class="form-label">Valor (R$)</label>
+            <input id="produto_valor" class="form-control mb-2" value="99.90">
+            <label class="form-label">Prazo de entrega</label>
+            <input id="produto_prazo" class="form-control mb-2" value="24 horas úteis">
+            <label class="form-label">Forma de entrega</label>
+            <input id="produto_entrega" class="form-control mb-2" value="Link de download por e-mail">
+            <label class="form-label">Cidade/Estado (emissão)</label>
+            <input id="emissao_local" class="form-control mb-2" value="Natal/RN">
+            <label class="form-label">Foro da Comarca</label>
+            <input id="foro_local" class="form-control mb-2" value="Natal/RN">
+          </div>
+        </div>
+
+        <div class="card shadow-sm mt-3 no-print small-muted">
+          <div class="card-body">
+            <strong>Observação:</strong> O PDF segue padrão Times New Roman 12pt, margens 20mm e espaçamento 1.5.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-8">
+        <h6 class="mb-2">Pré-visualização do Contrato</h6>
+        <div class="alert-area mb-2"></div>
+        <div id="contractArea" class="contract-preview"></div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import "app";
+  </script>
+</body>
+</html>
